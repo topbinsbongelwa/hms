@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="card" style="width:300px; margin:100px auto;">
+    <h2>Login</h2>
+
+    <input id="user" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+</div>
+
+<script>
+function login(){
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u === "admin" && p === "1234"){
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid login");
+    }
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Health System</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="patients.html">Patients</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="login.html">Logout</a>
+</div>
+
+<div class="main">
+
+    <div class="card">
+        <h2>Overview</h2>
+
+        <div class="grid">
+            <div class="stat">
+                <h3>120</h3>
+                <p>Patients</p>
+            </div>
+
+            <div class="stat">
+                <h3>45</h3>
+                <p>Appointments</p>
+            </div>
+
+            <div class="stat">
+                <h3>8</h3>
+                <p>Doctors</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patients</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Health System</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="patients.html">Patients</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="login.html">Logout</a>
+</div>
+
+<div class="main">
+
+    <div class="card">
+        <h2>Add Patient</h2>
+
+        <input id="name" placeholder="Name">
+        <input id="age" placeholder="Age">
+        <input id="condition" placeholder="Condition">
+
+        <button onclick="addPatient()">Add</button>
+    </div>
+
+    <div class="card">
+        <h2>Patient List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Condition</th>
+                </tr>
+            </thead>
+
+            <tbody id="list"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+let patients = [];
+
+function addPatient(){
+    let n = document.getElementById("name").value;
+    let a = document.getElementById("age").value;
+    let c = document.getElementById("condition").value;
+
+    patients.push({n,a,c});
+    render();
+}
+
+function render(){
+    let table = document.getElementById("list");
+    table.innerHTML = "";
+
+    patients.forEach(p => {
+        table.innerHTML += `
+        <tr>
+            <td>${p.n}</td>
+            <td>${p.a}</td>
+            <td>${p.c}</td>
+        </tr>`;
+    });
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Appointments</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Health System</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="patients.html">Patients</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="login.html">Logout</a>
+</div>
+
+<div class="main">
+
+    <div class="card">
+        <h2>Book Appointment</h2>
+
+        <input id="pname" placeholder="Patient Name">
+        <input type="date" id="date">
+
+        <button onclick="book()">Book</button>
+    </div>
+
+    <div class="card">
+        <h2>Appointments</h2>
+        <ul id="list"></ul>
+    </div>
+
+</div>
+
+<script>
+let apps = [];
+
+function book(){
+    let n = document.getElementById("pname").value;
+    let d = document.getElementById("date").value;
+
+    apps.push({n,d});
+    render();
+}
+
+function render(){
+    let list = document.getElementById("list");
+    list.innerHTML = "";
+
+    apps.forEach(a => {
+        list.innerHTML += `<li>${a.n} - ${a.d}</li>`;
+    });
+}
+</script>
+
+</body>
+</html>
