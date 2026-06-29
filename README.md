@@ -11,5 +11,5 @@ Update this when you start a page.
 | Dashboard | @topbinsbongelwa | `main` | Done |
 | Patients |  |  | To Do |
 | Appointments |  |  | To Do |
-| Admin |  |  | To Do |
+| Admin | @donnavantatenda5-stack  | 'main'  | To Do |
 | Billing |  |  | To Do |
