@@ -13,5 +13,5 @@ Update this when you start a page.
 | Appointments | @donnelshoko-art |'branch'  |  Done |
 | Patients |@Russell147  |'patients-page'  | Done |
 | Appointments |  |  | To Do |
-| Admin |  |  | To Do |
+| Admin | @donnavantatenda5-stack  | 'main'  | To Do |
 | Billing |  |  | To Do |
