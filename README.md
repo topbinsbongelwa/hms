@@ -10,6 +10,6 @@ Update this when you start a page.
 
 | Dashboard | @topbinsbongelwa | `main` | Done |
 | Patients |  |  | To Do |
-| Appointments |  |  | To Do |
+| Appointments | @donnelshoko-art |'branch'  |  Done |
 | Admin |  |  | To Do |
 | Billing |  |  | To Do |
